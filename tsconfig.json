@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "UMD",
+        "moduleResolution": "Node",
+        "esModuleInterop": true,
+        "downlevelIteration": true,
+        "useDefineForClassFields": true,
+        "skipLibCheck": true,
+        "lib": ["ESNext", "DOM", "DOM.Iterable"],
+        "declaration": true,
+        "outDir": "dist"
+    },
+    "include": ["source/*"],
+    "typedocOptions": {
+        "name": "MobX downloader",
+        "excludeExternals": true,
+        "excludePrivate": true,
+        "readme": "./ReadMe.md",
+        "plugin": ["typedoc-plugin-mdn-links"]
+    }
+}
