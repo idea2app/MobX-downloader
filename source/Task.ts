@@ -1,10 +1,11 @@
 import { Context, DownloadOptions, HTTPClient, TransferProgress } from 'koajax';
-import MobX, { computed, observable } from 'mobx';
+import * as MobX from 'mobx';
 import { destroy, persist } from 'mobx-restful';
 import type { FileSystemHandle } from 'native-file-system-adapter';
 import type { ReadableStream } from 'web-streams-polyfill';
 import { ByteSize, fileNameOf } from 'web-utility';
 
+const { observable, computed } = MobX;
 const ref =
     Reflect.get(MobX, 'observableRef') || Reflect.get(observable, 'ref');
 
