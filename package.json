@@ -1,6 +1,6 @@
 {
     "name": "mobx-downloader",
-    "version": "0.3.4",
+    "version": "0.3.5",
     "license": "LGPL-3.0-or-later",
     "author": "shiy2008@gmail.com",
     "description": "File downloading SDK in Web browser, which is powered by MobX.",
