@@ -1,14 +1,14 @@
 {
     "compilerOptions": {
         "target": "ES6",
-        "module": "UMD",
-        "moduleResolution": "Node",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
         "esModuleInterop": true,
-        "downlevelIteration": true,
         "useDefineForClassFields": true,
         "skipLibCheck": true,
         "lib": ["ESNext", "DOM", "DOM.Iterable"],
         "declaration": true,
+        "rootDir": ".",
         "outDir": "dist"
     },
     "include": ["source/*"],

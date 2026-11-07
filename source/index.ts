@@ -32,7 +32,8 @@ export class Downloader {
     @persist({
         set: tasks => tasks.map(({ name, path }) => ({ name, path })),
         get: list =>
-            list?.map(({ name, path }) => Downloader.createTask(path, name))
+            list?.map(({ name, path }) => Downloader.createTask(path, name)) ||
+            []
     })
     @observable
     accessor tasks: DownloadTask[] = [];

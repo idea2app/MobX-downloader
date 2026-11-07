@@ -23,7 +23,7 @@ If you have issues with ESM, you can add the following configuration to your `pa
 ```json
 {
     "resolutions": {
-        "native-file-system-adapter": "npm:@tech_query/native-file-system-adapter@^3.0.3"
+        "native-file-system-adapter": "npm:@tech_query/native-file-system-adapter@^3.1.0"
     }
 }
 ```
@@ -178,7 +178,7 @@ export const DownloaderPage: FC = observer(() => (
 [1]: https://mobx.js.org/
 [2]: https://libraries.io/npm/mobx-downloader
 [3]: https://github.com/idea2app/MobX-downloader/actions/workflows/main.yml
-[4]: https://nodei.co/npm/mobx-downloader/
+[4]: https://npm.im/mobx-downloader/
 [5]: https://yarnpkg.com/
 [6]: https://pnpm.io/
 [7]: https://github.com/idea2app/React-MobX-Bootstrap-ts/blob/master/src/component/Downloader.tsx
