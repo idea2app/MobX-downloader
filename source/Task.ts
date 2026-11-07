@@ -1,9 +1,12 @@
 import { Context, DownloadOptions, HTTPClient, TransferProgress } from 'koajax';
-import { computed, observable } from 'mobx';
+import MobX, { computed, observable } from 'mobx';
 import { destroy, persist } from 'mobx-restful';
 import type { FileSystemHandle } from 'native-file-system-adapter';
 import type { ReadableStream } from 'web-streams-polyfill';
-import { ByteSize } from 'web-utility';
+import { ByteSize, fileNameOf } from 'web-utility';
+
+const ref =
+    Reflect.get(MobX, 'observableRef') || Reflect.get(observable, 'ref');
 
 export abstract class DownloadTask implements Partial<TransferProgress> {
     abstract client: Pick<HTTPClient<Context>, 'download'>;
@@ -21,7 +24,7 @@ export abstract class DownloadTask implements Partial<TransferProgress> {
     accessor path = '';
 
     @persist()
-    @observable.ref
+    @ref
     accessor fsHandle: FileSystemHandle | undefined;
 
     @persist()
@@ -56,9 +59,7 @@ export abstract class DownloadTask implements Partial<TransferProgress> {
     }
 
     static nameOf(URI: string) {
-        return decodeURI(
-            new URL(URI).pathname.split('/').filter(Boolean).at(-1)
-        );
+        return fileNameOf(URI);
     }
 
     constructor(path: string, name = DownloadTask.nameOf(path)) {
